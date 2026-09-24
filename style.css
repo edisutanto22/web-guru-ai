@@ -1,1 +1,794 @@
-*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:#f4f7fb;color:#172033}.sidebar{position:fixed;left:0;top:0;bottom:0;width:255px;background:#14213d;color:#fff;padding:20px 14px;display:flex;flex-direction:column;z-index:10}.brand{display:flex;gap:12px;align-items:center;padding:8px 10px 24px}.brand-icon{font-size:34px}.brand strong{display:block;font-size:16px}.brand small{display:block;color:#b8c3d9;margin-top:3px}.nav{display:grid;gap:7px}.nav-item{border:0;background:transparent;color:#dbe4f5;text-align:left;padding:13px;border-radius:10px;font-size:15px;cursor:pointer}.nav-item:hover,.nav-item.active{background:#2d5bd1;color:#fff}.sidebar-footer{margin-top:auto;color:#93a2bf;font-size:12px;padding:10px}.main{margin-left:255px;min-height:100vh;padding:0 28px 25px}.topbar{height:82px;display:flex;align-items:center;gap:15px;border-bottom:1px solid #e1e7f0;margin-bottom:25px}.topbar h1{margin:0;font-size:25px}.topbar p{margin:4px 0 0;color:#718096;font-size:13px}.menu-btn{display:none;border:0;background:#e9eef8;border-radius:8px;padding:10px;font-size:20px}.top-actions{margin-left:auto}.date{font-size:13px;color:#667085}.page{display:none}.page.active{display:block}.welcome{background:linear-gradient(135deg,#244fc7,#6b46c1);color:#fff;border-radius:18px;padding:30px;display:flex;justify-content:space-between;align-items:center}.eyebrow{font-size:12px;letter-spacing:2px;opacity:.8}.welcome h2{font-size:32px;margin:8px 0}.welcome p{max-width:650px;margin:0;line-height:1.6;opacity:.9}.welcome-icon{font-size:75px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:20px 0}.stat-card,.card,.ai-card{background:#fff;border:1px solid #e4e9f1;border-radius:15px;box-shadow:0 5px 18px rgba(20,33,61,.04)}.stat-card{padding:18px;display:flex;gap:14px;align-items:center}.stat-card>span{font-size:27px}.stat-card small{display:block;color:#7a879a}.stat-card strong{font-size:26px}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{padding:20px;margin-bottom:18px}.card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.card h3{margin:0}.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.quick-btn{border:1px solid #e1e7f0;background:#f8faff;padding:18px;border-radius:12px;cursor:pointer;text-align:left;font-size:16px}.quick-btn span{display:block;margin-top:8px;font-size:13px}.info-list{padding-left:20px;line-height:1.8;color:#586579}.section-head{margin-bottom:16px}.section-head h2{margin:0 0 5px}.section-head p{margin:0;color:#718096}.form-grid{display:grid;grid-template-columns:1fr 1.5fr 1fr auto;gap:10px}.form-grid input,.form-grid select,.toolbar input,.ai-card input{width:100%;padding:12px;border:1px solid #d8dfeb;border-radius:9px;font:inherit;background:#fff}.primary{border:0;background:#2457d6;color:#fff;padding:12px 16px;border-radius:9px;cursor:pointer;font-weight:600}.primary:hover{background:#1b43a7}.toolbar{margin-bottom:14px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:600px}th,td{text-align:left;padding:12px;border-bottom:1px solid #e9edf3;font-size:14px}th{background:#f7f9fc;color:#59677c}.delete{border:0;background:#fff0f0;color:#c53030;padding:7px 10px;border-radius:7px;cursor:pointer}.status-select{padding:7px;border:1px solid #d8dfeb;border-radius:7px}.attendance-summary{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:15px}.attendance-summary span{background:#f5f7fb;padding:10px 14px;border-radius:9px;font-size:13px}.attendance-summary strong{margin-left:5px}.ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.ai-card{padding:22px}.ai-icon{font-size:35px}.ai-card h3{margin:10px 0 5px}.ai-card p{color:#6b778a;font-size:14px}.ai-card .primary{margin-top:10px}.ai-output{margin-top:14px;padding:14px;background:#f7f9fc;border-radius:10px;min-height:90px;line-height:1.6;font-size:14px}.notice{background:#fff8e7;border:1px solid #f2dfaa;padding:15px;border-radius:10px;margin-top:18px;color:#705b21}footer{text-align:center;color:#8792a5;font-size:12px;padding:25px 0 5px}@media(max-width:900px){.sidebar{transform:translateX(-100%);transition:.25s}.sidebar.open{transform:translateX(0)}.main{margin-left:0;padding:0 16px}.menu-btn{display:block}.stats{grid-template-columns:1fr 1fr}.grid-2,.ai-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr 1fr}.form-grid .primary{grid-column:1/-1}.welcome-icon{display:none}}@media(max-width:560px){.stats{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.welcome{padding:22px}.welcome h2{font-size:27px}.topbar h1{font-size:21px}}
+/* =========================================================
+   WEB GURU AI — ADMINISTRASI GURU DIGITAL
+   CSS STYLE
+   ========================================================= */
+
+/* =========================================================
+   1. GLOBAL / RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+}
+
+
+/* =========================================================
+   2. SIDEBAR
+   ========================================================= */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 255px;
+
+    background: #14213d;
+    color: #ffffff;
+
+    padding: 20px 14px;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 10;
+}
+
+
+/* ---------- Brand ---------- */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 8px 10px 24px;
+}
+
+.brand-icon {
+    font-size: 34px;
+}
+
+.brand strong {
+    display: block;
+    font-size: 16px;
+}
+
+.brand small {
+    display: block;
+    color: #b8c3d9;
+    margin-top: 3px;
+}
+
+
+/* ---------- Navigation ---------- */
+
+.nav {
+    display: grid;
+    gap: 7px;
+}
+
+.nav-item {
+    border: 0;
+    background: transparent;
+    color: #dbe4f5;
+
+    text-align: left;
+
+    padding: 13px;
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background: #2d5bd1;
+    color: #ffffff;
+}
+
+
+/* ---------- Sidebar Footer ---------- */
+
+.sidebar-footer {
+    margin-top: auto;
+
+    color: #93a2bf;
+    font-size: 12px;
+
+    padding: 10px;
+}
+
+
+/* =========================================================
+   3. MAIN CONTENT
+   ========================================================= */
+
+.main {
+    margin-left: 255px;
+
+    min-height: 100vh;
+
+    padding: 0 28px 25px;
+}
+
+
+/* =========================================================
+   4. TOP BAR
+   ========================================================= */
+
+.topbar {
+    height: 82px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    border-bottom: 1px solid #e1e7f0;
+
+    margin-bottom: 25px;
+}
+
+.topbar h1 {
+    margin: 0;
+
+    font-size: 25px;
+}
+
+.topbar p {
+    margin: 4px 0 0;
+
+    color: #718096;
+
+    font-size: 13px;
+}
+
+
+/* ---------- Mobile Menu Button ---------- */
+
+.menu-btn {
+    display: none;
+
+    border: 0;
+
+    background: #e9eef8;
+
+    border-radius: 8px;
+
+    padding: 10px;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* ---------- Top Actions ---------- */
+
+.top-actions {
+    margin-left: auto;
+}
+
+.date {
+    font-size: 13px;
+    color: #667085;
+}
+
+
+/* =========================================================
+   5. PAGE SYSTEM
+   ========================================================= */
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+
+/* =========================================================
+   6. WELCOME SECTION
+   ========================================================= */
+
+.welcome {
+    background: linear-gradient(
+        135deg,
+        #244fc7,
+        #6b46c1
+    );
+
+    color: #ffffff;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.eyebrow {
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.8;
+}
+
+.welcome h2 {
+    font-size: 32px;
+
+    margin: 8px 0;
+}
+
+.welcome p {
+    max-width: 650px;
+
+    margin: 0;
+
+    line-height: 1.6;
+
+    opacity: 0.9;
+}
+
+.welcome-icon {
+    font-size: 75px;
+}
+
+
+/* =========================================================
+   7. STATISTICS CARDS
+   ========================================================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin: 20px 0;
+}
+
+.stat-card,
+.card,
+.ai-card {
+    background: #ffffff;
+
+    border: 1px solid #e4e9f1;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 18px rgba(20, 33, 61, 0.04);
+}
+
+.stat-card {
+    padding: 18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+.stat-card > span {
+    font-size: 27px;
+}
+
+.stat-card small {
+    display: block;
+
+    color: #7a879a;
+}
+
+.stat-card strong {
+    font-size: 26px;
+}
+
+
+/* =========================================================
+   8. GRID
+   ========================================================= */
+
+.grid-2 {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   9. CARD
+   ========================================================= */
+
+.card {
+    padding: 20px;
+
+    margin-bottom: 18px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin: 0;
+}
+
+
+/* =========================================================
+   10. QUICK ACTION
+   ========================================================= */
+
+.quick-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+.quick-btn {
+    border: 1px solid #e1e7f0;
+
+    background: #f8faff;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    font-size: 16px;
+
+    transition: 0.2s ease;
+}
+
+.quick-btn:hover {
+    background: #eef3ff;
+    border-color: #cbd8f5;
+}
+
+.quick-btn span {
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   11. INFORMATION LIST
+   ========================================================= */
+
+.info-list {
+    padding-left: 20px;
+
+    line-height: 1.8;
+
+    color: #586579;
+}
+
+
+/* =========================================================
+   12. SECTION HEADER
+   ========================================================= */
+
+.section-head {
+    margin-bottom: 16px;
+}
+
+.section-head h2 {
+    margin: 0 0 5px;
+}
+
+.section-head p {
+    margin: 0;
+
+    color: #718096;
+}
+
+
+/* =========================================================
+   13. FORM
+   ========================================================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1.5fr
+        1fr
+        auto;
+
+    gap: 10px;
+}
+
+.form-grid input,
+.form-grid select,
+.toolbar input,
+.ai-card input {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #d8dfeb;
+
+    border-radius: 9px;
+
+    font: inherit;
+
+    background: #ffffff;
+
+    outline: none;
+}
+
+.form-grid input:focus,
+.form-grid select:focus,
+.toolbar input:focus,
+.ai-card input:focus {
+    border-color: #2457d6;
+
+    box-shadow: 0 0 0 3px rgba(36, 87, 214, 0.08);
+}
+
+
+/* =========================================================
+   14. PRIMARY BUTTON
+   ========================================================= */
+
+.primary {
+    border: 0;
+
+    background: #2457d6;
+
+    color: #ffffff;
+
+    padding: 12px 16px;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.primary:hover {
+    background: #1b43a7;
+}
+
+
+/* =========================================================
+   15. TOOLBAR
+   ========================================================= */
+
+.toolbar {
+    margin-bottom: 14px;
+}
+
+
+/* =========================================================
+   16. TABLE
+   ========================================================= */
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 600px;
+}
+
+th,
+td {
+    text-align: left;
+
+    padding: 12px;
+
+    border-bottom: 1px solid #e9edf3;
+
+    font-size: 14px;
+}
+
+th {
+    background: #f7f9fc;
+
+    color: #59677c;
+}
+
+
+/* =========================================================
+   17. DELETE BUTTON
+   ========================================================= */
+
+.delete {
+    border: 0;
+
+    background: #fff0f0;
+
+    color: #c53030;
+
+    padding: 7px 10px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.delete:hover {
+    background: #ffe1e1;
+}
+
+
+/* =========================================================
+   18. STATUS SELECT
+   ========================================================= */
+
+.status-select {
+    padding: 7px;
+
+    border: 1px solid #d8dfeb;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   19. ATTENDANCE SUMMARY
+   ========================================================= */
+
+.attendance-summary {
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 15px;
+}
+
+.attendance-summary span {
+    background: #f5f7fb;
+
+    padding: 10px 14px;
+
+    border-radius: 9px;
+
+    font-size: 13px;
+}
+
+.attendance-summary strong {
+    margin-left: 5px;
+}
+
+
+/* =========================================================
+   20. AI SECTION
+   ========================================================= */
+
+.ai-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+.ai-card {
+    padding: 22px;
+}
+
+.ai-icon {
+    font-size: 35px;
+}
+
+.ai-card h3 {
+    margin: 10px 0 5px;
+}
+
+.ai-card p {
+    color: #6b778a;
+
+    font-size: 14px;
+}
+
+.ai-card .primary {
+    margin-top: 10px;
+}
+
+
+/* ---------- AI Output ---------- */
+
+.ai-output {
+    margin-top: 14px;
+
+    padding: 14px;
+
+    background: #f7f9fc;
+
+    border-radius: 10px;
+
+    min-height: 90px;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   21. NOTICE
+   ========================================================= */
+
+.notice {
+    background: #fff8e7;
+
+    border: 1px solid #f2dfaa;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    margin-top: 18px;
+
+    color: #705b21;
+}
+
+
+/* =========================================================
+   22. FOOTER
+   ========================================================= */
+
+footer {
+    text-align: center;
+
+    color: #8792a5;
+
+    font-size: 12px;
+
+    padding: 25px 0 5px;
+}
+
+
+/* =========================================================
+   23. RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    /* Sidebar */
+
+    .sidebar {
+        transform: translateX(-100%);
+
+        transition: 0.25s ease;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+
+    /* Main */
+
+    .main {
+        margin-left: 0;
+
+        padding: 0 16px;
+    }
+
+
+    /* Menu Button */
+
+    .menu-btn {
+        display: block;
+    }
+
+
+    /* Statistics */
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    /* Grid */
+
+    .grid-2,
+    .ai-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Form */
+
+    .form-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .form-grid .primary {
+        grid-column: 1 / -1;
+    }
+
+
+    /* Welcome */
+
+    .welcome-icon {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   24. RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+    /* Statistics */
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Form */
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Welcome */
+
+    .welcome {
+        padding: 22px;
+    }
+
+    .welcome h2 {
+        font-size: 27px;
+    }
+
+
+    /* Topbar */
+
+    .topbar h1 {
+        font-size: 21px;
+    }
+}
